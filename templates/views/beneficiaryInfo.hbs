@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneficiary Information</title>
+    <link rel="stylesheet" href="/REMITWISER/public/css/style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h2>Beneficiary Information</h2>
+        <form action="/beneficiaryInfo" method="POST">
+            <label for="accountHolderName">Account Holder's Name</label>
+            <input type="text" id="accountHolderName" name="accountHolderName" required>
+
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="state">State/Region</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="postalCode">Postal Code</label>
+            <input type="text" id="postalCode" name="postalCode" required>
+
+            <label for="bankName">Bank Name</label>
+            <input type="text" id="bankName" name="bankName" required>
+
+            <label for="bankAddress">Bank Address</label>
+            <input type="text" id="bankAddress" name="bankAddress" required>
+
+            <label for="bankCountry">Bank Country</label>
+            <select id="bankCountry" name="bankCountry" required>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="swiftCode">SWIFT Code</label>
+            <input type="text" id="swiftCode" name="swiftCode" required>
+
+            <button type="submit">Submit Beneficiary Info</button>
+        </form>
+    </div>
+</body>
+</html>
