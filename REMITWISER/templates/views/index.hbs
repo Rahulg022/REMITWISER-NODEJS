@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    {{> header}}
+    {{> navbar}}
+
+    <div class="container">
+        <h1>Welcome to RemitWiser</h1>
+        <div class="auth-buttons">
+            <a href="/login" class="btn">Login</a>
+            <a href="/register" class="btn">Register</a>
+            {{!-- <a href="/remitterInfo">Send Money</a> --}}
+
+        </div>
+    </div>
+
+    {{!-- {{> footer}} --}}
+
+</body>
+</html>

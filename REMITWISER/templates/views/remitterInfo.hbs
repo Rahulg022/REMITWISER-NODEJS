@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remitter Info</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        function fillInfo() {
+            // Assuming you have stored the user's registration info in variables
+            const userInfo = {
+                fullname: "{{user.fullname}}", // Use server-side rendering to pass this data
+                email: "{{user.email}}",
+                phonenumber: "{{user.phonenumber}}",
+                pannumber: "{{user.pannumber}}",
+                purpose: "{{user.purpose}}",
+                dob: "{{user.dob}}",
+                address: "{{user.address}}",
+                postalcode: "{{user.postalcode}}",
+                state: "{{user.state}}",
+                city: "{{user.city}}",
+                country: "{{user.country}}"
+            };
+
+            // Fill the form fields with the user's info
+            document.querySelector('input[name="fullname"]').value = userInfo.fullname;
+            document.querySelector('input[name="email"]').value = userInfo.email;
+            document.querySelector('input[name="phonenumber"]').value = userInfo.phonenumber;
+            document.querySelector('input[name="pannumber"]').value = userInfo.pannumber;
+            document.querySelector('select[name="purpose"]').value = userInfo.purpose;
+            document.querySelector('input[name="dob"]').value = userInfo.dob;
+            document.querySelector('input[name="address"]').value = userInfo.address;
+            document.querySelector('input[name="postalcode"]').value = userInfo.postalcode;
+            document.querySelector('input[name="state"]').value = userInfo.state;
+            document.querySelector('input[name="city"]').value = userInfo.city;
+            document.querySelector('input[name="country"]').value = userInfo.country;
+        }
+    </script>
+</head>
+<body>
+    {{> header}}
+    {{> navbar}}
+    <div class="container">
+        <h2>Remitter's Information</h2>
+        <form action="/remitterInfo" method="POST">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="phonenumber" placeholder="Phone Number" required>
+            <input type="text" name="pannumber" placeholder="PAN Number" required>
+            <select name="purpose" required>
+                <option value="" disabled selected>Select Purpose</option>
+                <option value="Personal">Personal</option>
+                <option value="Business">Business</option>
+            </select>
+            <input type="date" name="dob" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="postalcode" placeholder="Postal Code" required>
+            <input type="text" name="state" placeholder="State/Province" required>
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="country" placeholder="Country" required>
+            <input type="text" name="bankname" placeholder="Bank Name" required>
+            <input type="text" name="accountnumber" placeholder="Account Number" required>
+            <input type="text" name="ifsc" placeholder="IFSC Code" required>
+            <button type="button" onclick="fillInfo()">Same as Register</button>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    {{!-- {{> footer}} --}}
+</body>
+</html>
