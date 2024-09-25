@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    {{> header}}
+    {{> navbar}}
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form action="/register" method="POST">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="phonenumber" placeholder="Phone Number" required>
+            <input type="text" name="pannumber" placeholder="PAN Number" required>
+            <select name="purpose" required>
+                <option value="" disabled selected>Select Purpose</option>
+                <option value="Personal">Personal</option>
+                <option value="Business">Business</option>
+            </select>
+            <input type="date" name="dob" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="postalcode" placeholder="Postal Code" required>
+            <input type="text" name="state" placeholder="State/Province" required>
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="country" placeholder="Country" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    {{!-- {{> footer}} --}}
+</body>
+</html>
